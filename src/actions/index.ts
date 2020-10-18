@@ -1,9 +1,9 @@
 export interface Action{
   type:string,
-  value: number
+  value: any
 }
 
-export function TestAction(val:number):Action{
+export function TestAction(val:any):Action{
   return {
     type: 'TestAction',
     value: val
