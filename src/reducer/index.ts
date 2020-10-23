@@ -6,7 +6,8 @@ const initState = {
 
 export function reducer(state = initState,action:Action){
   if(action.type === 'TestAction'){
-      return Object.assign(state,action.value)
+      state.value = action.value
+      return Object.assign({},state)
   }else{
     return state
   }
