@@ -1,3 +1,13 @@
+html{
+  height: 100vh;
+  overflow: hidden;
+}
+.el-context{
+  height: 100vh;
+  overflow: hidden;
+}
+
+
 .el-header{
   background-color: #00d1b2;
   text-align: center;
@@ -12,23 +22,49 @@
   overflow: hidden;
 }
 
-.el-container::-webkit-scrollbar {
+.el-slider{
+  height: calc(100vh - 66px);
+  overflow-x: hidden;
+}
+
+.el-slider::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
-.el-container::-webkit-scrollbar-thumb {
-  background: hsla(0,0%,100%,.2);
+.el-slider::-webkit-scrollbar-thumb {
+  background: rgba(4, 209, 31, 0.2);
   border-radius: 3px;
-  -webkit-box-shadow: inset 0 0 5px hsla(0,0%,100%,.05);
+  -webkit-box-shadow: inset 0 0 5px rgba(5, 117, 182, 0.05);
 }
 
-.el-container::-webkit-scrollbar-track {
-  background: hsla(0,0%,100%,.15);
+.el-slider::-webkit-scrollbar-track {
+  background: rgba(43, 182, 1, 0.15);
   border-radius: 3px;
-  -webkit-box-shadow: inset 0 0 5px rgba(37,37,37,.05);
+  -webkit-box-shadow: inset 0 0 5px rgba(9, 218, 155, 0.05);
 }
+
+
 
 .el-page{
   padding: 10px 15px;
+  height: calc(100vh - 56px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.el-page::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.el-page::-webkit-scrollbar-thumb {
+  background: rgba(6, 226, 208, 0.2);
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 0 5px rgba(4, 241, 75, 0.05);
+}
+
+.el-page::-webkit-scrollbar-track {
+  background: rgba(4, 37, 221, 0.15);
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 0 5px rgba(2, 203, 238, 0.05);
 }

@@ -9,7 +9,7 @@ export default class Zh_Layout extends React.Component{
   // };
    render(){
      return (
-      <div className="contailer">
+      <div className="el-context">
         <div className="el-header is-primary">
           <nav className="level">
               <div className="level-left">
@@ -29,10 +29,10 @@ export default class Zh_Layout extends React.Component{
           </nav>
         </div>
         <div className="el-container">
-          <div className="el-container" style={{color: 'red',overflowY:'auto',width: '256px',overflowX: 'hidden'}}>
+          <div className="el-slider" style={{overflowY:'auto',width: '256px',}}>
           <Menu
        // onClick={this.handleClick}
-        style={{ width: 256 }}
+        style={{ width: 216 }}
         defaultSelectedKeys={['1']}
         defaultOpenKeys={['sub1']}
         mode="inline"
@@ -80,9 +80,54 @@ export default class Zh_Layout extends React.Component{
       </Menu>                    
           </div>
           <div className="el-page" style={{width:'100%'}}>
-                     <div style={{width:100,height:100,color: 'red'}}>
-                         <Button>点击</Button>
-                      </div>  
+
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/> <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/> <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/> <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/> <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/> <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/> <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/> <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/> <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/> <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/> <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/> <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/> <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/> <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/> <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+            <Button>点击</Button><br/>
+     
           </div>
           </div>
       </div>
