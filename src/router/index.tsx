@@ -1,20 +1,26 @@
 import React from "react"
-const routes = [
+export interface RouteModle{
+  path: string,
+  exact: boolean,
+  children?:RouteModle[],
+  component?:any,
+}
+const routes:RouteModle[] = [
   {
-    path: "/",
+    path: "",
     exact: true,
-    sidebar: () => <div>home!</div>,
-    main: () => <h2>Home</h2>
-  },
-  {
-    path: "/bubblegum",
-    sidebar: () => <div>bubblegum!</div>,
-    main: () => <h2>Bubblegum</h2>
-  },
-  {
-    path: "/shoelaces",
-    sidebar: () => <div>shoelaces!</div>,
-    main: () => <h2>Shoelaces</h2>
+    children:[
+      {
+        path: "/bubblegum",
+        exact: true,
+        component: () => <h2>Bubblegum</h2>
+      },
+      {
+        path: "/shoelaces",
+        exact: true,
+        component: () => <h2>Shoelaces</h2>
+      }
+    ]
   }
 ]
 
