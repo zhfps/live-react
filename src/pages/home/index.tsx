@@ -14,7 +14,6 @@ interface IProp{
     value+=1
     const action  = TestAction(value)
     this.props.dispath(action)
-    console.log(this.props)
   }
 
   render(){

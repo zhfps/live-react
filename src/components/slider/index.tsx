@@ -1,59 +1,50 @@
 import React,{ Component } from 'react'
 import { Link } from "react-router-dom";
 import { Menu  } from 'antd'
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons'
+import routes,{ RouteModle } from '../../router/index'
 const { SubMenu } = Menu;
 export default class Slider  extends Component{
+  GetMenus = (routes:RouteModle[],path:string,index:number):any => {
+    let self = this
+    index++
+   return routes.map(item=>{
+      let url = path + item.path
+      if(item.children && item.children.length>0){       
+       return (
+          <SubMenu
+              key={index}
+              title={
+                <span>
+                  {item.icon}
+                  <span>{item.title}</span>
+                </span>
+              }
+            >
+            {
+              self.GetMenus(item.children,url,index)
+            }
+          </SubMenu>
+       ) 
+      }else{  
+        index++
+        return(
+            <Menu.Item key={index}>{item.icon}<span><Link to={url}>{item.title}</Link></span></Menu.Item>
+        )
+        
+      }
+    })
+  }
   render(){
     return (
          <>
           <Menu
-          // onClick={this.handleClick}
             style={{ width: 216 }}
-            defaultSelectedKeys={['1']}
-            defaultOpenKeys={['sub1']}
+            defaultSelectedKeys={['3']}
+            defaultOpenKeys={['1']}
             mode="inline"
+           
           >
-            <SubMenu
-              key="sub1"
-              title={
-                <span>
-                  <MailOutlined />
-                  <span>Navigation One</span>
-                </span>
-              }
-            >
-              <Menu.ItemGroup key="g1" title="Item 1">
-                <Menu.Item key="1"><Link to="/bubblegum">Option 1</Link></Menu.Item>
-                <Menu.Item key="2"><Link to="/shoelaces">Option 1</Link></Menu.Item>
-              </Menu.ItemGroup>
-              <Menu.ItemGroup key="g2" title="Item 2">
-                <Menu.Item key="3">Option 3</Menu.Item>
-                <Menu.Item key="4">Option 4</Menu.Item>
-              </Menu.ItemGroup>
-            </SubMenu>
-            <SubMenu key="sub2" icon={<AppstoreOutlined />} title="Navigation Two">
-              <Menu.Item key="5">Option 5</Menu.Item>
-              <Menu.Item key="6">Option 6</Menu.Item>
-              <SubMenu key="sub3" title="Submenu">
-                <Menu.Item key="7">Option 7</Menu.Item>
-                <Menu.Item key="8">Option 8</Menu.Item>
-              </SubMenu>
-            </SubMenu>
-            <SubMenu
-              key="sub4"
-              title={
-                <span>
-                  <SettingOutlined />
-                  <span>Navigation Three</span>
-                </span>
-              }
-            >
-              <Menu.Item key="9">Option 9</Menu.Item>
-              <Menu.Item key="10">Option 10</Menu.Item>
-              <Menu.Item key="11">Option 11</Menu.Item>
-              <Menu.Item key="12">Option 12</Menu.Item>
-            </SubMenu>
+           {this.GetMenus(routes,"",0)}
           </Menu>                   
          </>
     )

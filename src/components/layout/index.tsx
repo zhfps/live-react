@@ -5,7 +5,7 @@ import {
 } from "react-router-dom"
 import Header from '../header/index'
 import Slider from '../slider/index'
-import Menu from '../menu/index'
+import Routes from '../routes/index'
 
 
 export default class Zh_Layout extends React.Component{
@@ -23,7 +23,7 @@ export default class Zh_Layout extends React.Component{
             </div>
             <div className="el-page" style={{width:'100%'}}>
             <Switch>
-               <Menu/>
+               <Routes/>
            </Switch>
             </div>
             </div>
