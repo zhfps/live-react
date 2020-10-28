@@ -27,10 +27,11 @@ export default class Slider  extends Component{
        ) 
       }else{  
         index++
-        return(
+        if(!item.hide){
+          return(
             <Menu.Item key={index}>{item.icon}<span><Link to={url}>{item.title}</Link></span></Menu.Item>
         )
-        
+        }
       }
     })
   }
@@ -42,7 +43,6 @@ export default class Slider  extends Component{
             defaultSelectedKeys={['3']}
             defaultOpenKeys={['1']}
             mode="inline"
-           
           >
            {this.GetMenus(routes,"",0)}
           </Menu>                   

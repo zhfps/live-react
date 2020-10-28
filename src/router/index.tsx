@@ -4,6 +4,7 @@ export interface RouteModle{
   path: string,
   exact: boolean,
   title: string,
+  hide?:boolean,
   icon?: any,
   children?:RouteModle[],
   component?:any,
@@ -15,6 +16,13 @@ const routes:RouteModle[] = [
     title: 'Test',
     children:[
       {
+        path: "/home",
+        exact: true,
+        hide: true,
+        title: 'home',
+        icon: <AppstoreOutlined/>,
+        component: () => <h2>home</h2>
+      },{
         path: "/bubblegum",
         exact: true,
         title: 'bubblegum',
