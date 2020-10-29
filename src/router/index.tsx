@@ -1,5 +1,5 @@
 import React from "react"
-import { AppstoreOutlined, MailOutlined} from '@ant-design/icons'
+import { AppstoreOutlined, InsuranceOutlined,UnorderedListOutlined} from '@ant-design/icons'
 export interface RouteModle{
   path: string,
   exact: boolean,
@@ -13,28 +13,22 @@ const routes:RouteModle[] = [
   {
     path: "",
     exact: true,
-    title: 'Test',
+    title: '主页',
+    icon:<UnorderedListOutlined />,
     children:[
-      {
-        path: "/home",
+     {
+        path: "/",
         exact: true,
-        hide: true,
-        title: 'home',
+        title: '访问记录',
         icon: <AppstoreOutlined/>,
-        component: () => <h2>home</h2>
-      },{
-        path: "/bubblegum",
-        exact: true,
-        title: 'bubblegum',
-        icon: <AppstoreOutlined/>,
-        component: () => <h2>Bubblegum</h2>
+        component: () => <h2>访问记录</h2>
       },
       {
         path: "/shoelaces",
         exact: true,
-        title: 'shoelaces',
-        icon:<MailOutlined/>,
-        component: () => <h2>Shoelaces</h2>
+        title: '控制台',
+        icon:<InsuranceOutlined />,
+        component: () => <h2>控制台</h2>
       }
     ]
   }

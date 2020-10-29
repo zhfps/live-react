@@ -1,6 +1,7 @@
 import React from 'react'
-import { Route } from "react-router-dom"
+import { Route,Redirect } from "react-router-dom"
 import routes,{ RouteModle } from '../../router/index'
+const auth = true
 export default class Menu extends React.Component{
   GetRoute = (routes:RouteModle[],href:string,index:number):any => {
     let self = this
@@ -10,14 +11,26 @@ export default class Menu extends React.Component{
        return self.GetRoute(item.children,url,index) 
       }else{  
         index++
-        return(
-          <Route
-              key={index}
-              path={url}
-              exact={item.exact}
-              children={<item.component/>}
-           />
-        )
+        if(auth){
+          return(
+            <Route
+                key={index}
+                path={url}
+                exact={item.exact}
+                children={<item.component/>}
+             />
+          )
+        }else{
+          return (
+            <Route 
+            key={index}
+            render={ ()=>(
+              <Redirect to='/login'></Redirect>
+            )
+            } />
+          )
+        }
+        
         
       }
     })
