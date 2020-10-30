@@ -1,5 +1,8 @@
 import React from "react"
 import { AppstoreOutlined, InsuranceOutlined,UnorderedListOutlined} from '@ant-design/icons'
+
+import Home from '../pages/home'
+
 export interface RouteModle{
   path: string,
   exact: boolean,
@@ -19,9 +22,9 @@ const routes:RouteModle[] = [
      {
         path: "/",
         exact: true,
-        title: '访问记录',
+        title: '开发计划',
         icon: <AppstoreOutlined/>,
-        component: () => <h2>访问记录</h2>
+        component:()=> <Home/>
       },
       {
         path: "/shoelaces",

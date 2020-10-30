@@ -19,9 +19,25 @@ const addProxy = () => (configFunction) => {
 
   return configFunction
 }
+// 打包配置
+const addCustomize = () => config => {
+  
+  // 关闭sourceMap
+  config.devtool = false;
+  // 配置打包后的文件位置
+  config.output.path = __dirname + '/dist';
+  config.output.publicPath = './';
+  //配置favicon公共文件打包目录
+  const paths = require('react-scripts/config/paths');
+  paths.appBuild = path.join(path.dirname(paths.appBuild), 'dist');
+
+  
+  return config;
+}
 
 module.exports = {
   webpack: override(
+    addCustomize(),
     fixBabelImports('import', {
       libraryName: 'antd',
       libraryDirectory: 'es',
